@@ -14,7 +14,7 @@
             <h1><i class="fa fa-sun-o" aria-hidden="true"></i> Aplikacja pogodowa</i>
             </h1>
             <div class="search-wrap">
-                <input placeholder="Wyszukaj miejscowość..." type="text" id="city-name">
+                <input placeholder="Wyszukaj miejscowość..." type="text" id="city-name" autocomplete="address-level1">
                 <button class="search"><i class="fa fa-search" aria-hidden="true"></i>
                 </button>
             </div>
@@ -40,5 +40,9 @@
         </div>
     </div> -->
     <script src="app.js"></script>
+    <script async
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAbIDJ0pUqi55RsJr2ZX14vr5LdVSneLvY&libraries=places&callback=activeteCitySearch">
+    </script>
+
 </body>
 </html> 
