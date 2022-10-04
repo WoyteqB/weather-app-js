@@ -5,18 +5,40 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Prognoza pogody</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="weather-app-container">
-        <div class="weather-app">
-            <h1>Aplikacja pogodowa</h1>
+    <header>
+        <div class="wrapper">
+            <h1><i class="fa fa-sun-o" aria-hidden="true"></i> Aplikacja pogodowa</i>
+            </h1>
             <div class="search-wrap">
-                <input type="text" id="city-name">
-                <button class="search">S</button>
+                <input placeholder="Wyszukaj miejscowość..." type="text" id="city-name">
+                <button class="search"><i class="fa fa-search" aria-hidden="true"></i>
+                </button>
             </div>
         </div>
-    </div>
+    </header>
+    <main>
+        <div class="wrapper">
+
+        </div>
+    </main>
+    <!-- <div class="error-container">
+        <div class="error">
+            <div class="title">
+                <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
+                <h3>Błąd programu</h3>
+            </div>
+            <div class="content">
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Porro laudantium officia inventore nisi quidem, repudiandae at sequi similique aperiam amet adipisci dolores incidunt eum ratione nostrum reiciendis, dolor voluptatem enim.
+            </div>
+            <button>
+                <i class="fa fa-times" aria-hidden="true"></i>
+            </button>
+        </div>
+    </div> -->
     <script src="app.js"></script>
 </body>
 </html> 
