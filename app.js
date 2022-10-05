@@ -39,20 +39,7 @@ let setDisplayWeather = (data) => {
 };
 
 let displayError = (title, text) =>{
-//   <div class="error-container">
-//     <div class="error">
-//         <div class="title">
-//             <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
-//             <h3>Błąd programu</h3>
-//         </div>
-//         <div class="content">
-//             Lorem ipsum dolor sit, amet consectetur adipisicing elit. Porro laudantium officia inventore nisi quidem, repudiandae at sequi similique aperiam amet adipisci dolores incidunt eum ratione nostrum reiciendis, dolor voluptatem enim.
-//         </div>
-//         <button>
-//             <i class="fa fa-times" aria-hidden="true"></i>
-//         </button>
-//     </div>
-// </div>
+
 let errorContainer = document.createElement("div");
 errorContainer.className = "error-container";
 errorContainer.innerHTML = '<div class="error-container">'+
