@@ -5,7 +5,10 @@ const displayWeather = document.querySelector("main .wrapper");
 let showCityWeather = (city) =>{
     let errorTitle = "";
     let errorText = "";
-    fetch('https://api.openweathermap.org/data/2.5/weather?q='+city+'&appid=f0c515d63a64608d97e703d0f0121976&lang=pl&units=metric ')
+    fetch(
+        'http://dataservice.accuweather.com/locations/v1/cities/autocomplete?q='+
+        city+'&apikey=stvXgfCdwJ2XzNAR0N6fppcGvPg4Sez0&language=pl-PL'
+        )
     .then( res => {
         console.log(res);
         if(res.ok ){
@@ -23,7 +26,8 @@ let showCityWeather = (city) =>{
     .then( (data) => {
         //console.log(data, displayWeather);
         console.log("DATA");
-        setDisplayWeather(data);
+        console.log(data)
+        //setDisplayWeather(data);
     })
     .catch(err => {
         displayError(errorTitle, errorText)
