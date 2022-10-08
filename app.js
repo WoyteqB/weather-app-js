@@ -1,6 +1,8 @@
 const searchInput = document.querySelector("#city-name");
 const searchButton = document.querySelector("header button.search");
+const closeAutosearchButton = document.querySelector("header button.close");
 const displayWeather = document.querySelector("main .wrapper");
+const searchWrap = document.querySelector(".search-wrap");
 
 let showCityWeather = (city) =>{
     let errorTitle = "";
@@ -34,8 +36,44 @@ let showCityWeather = (city) =>{
     });
 };
 
+let showCitylist = (city) =>{
+    let errorTitle = "";
+    let errorText = "";
+    fetch(
+        'http://dataservice.accuweather.com/locations/v1/cities/autocomplete?q='+
+        city+'&apikey=stvXgfCdwJ2XzNAR0N6fppcGvPg4Sez0&language=pl-PL'
+        )
+    .then( res => {
+        //console.log(res);
+        if(res.ok ){
+            return res
+        }else {
+            errorTitle = "Błąd "+ res.status;
+            errorText = res.statusText;
+        }
+        throw Error(res.status + " - Połączenie")
+    })
+    .then( (res) => {
+        //console.log("JSON");
+        return res.json();
+    })
+    .then( (data) => {
+        //console.log(data, displayWeather);
+        //console.log("DATA");
+        //console.log(data)
+        data.forEach(element => {
+            console.log(element.LocalizedName+", "+element.AdministrativeArea.LocalizedName);
+        });
+        //setDisplayWeather(data);
+    })
+    .catch(err => {
+        displayError(errorTitle, errorText)
+        console.log(err);
+    });
+};
+
 searchButton.addEventListener("click", ()=>{
-    showCityWeather(searchInput.value)
+    //showCityWeather(searchInput.value)
 });
 
 let setDisplayWeather = (data) => {
@@ -67,11 +105,14 @@ document.querySelector('.error-container button').addEventListener("click", ()=>
 })
 
 }
-function activeteCitySearch(){
-    let option = {
-        types: ['(cities)'],
-        componentRestrictions: { country: ["pl"],}
+searchInput.addEventListener("input", (e)=>{
+    if(searchInput.value.length > 1){
+        //showCitylist(searchInput.value);
     }
-    new google.maps.places.Autocomplete(searchInput, option);
-}
-
+})
+searchInput.addEventListener("click", ()=>{
+    searchWrap.classList.remove("close")
+})
+closeAutosearchButton.addEventListener("click", ()=>{
+    searchWrap.classList.add("close")
+})

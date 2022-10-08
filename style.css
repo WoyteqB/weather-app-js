@@ -51,7 +51,8 @@ header h1 i{
     border-color: lightblue;
     outline: none;
 }
-.search-wrap button.search{
+.search-wrap button{
+    display: none;
     position: absolute;
     border: none;
     border-radius: 19px;
@@ -67,6 +68,47 @@ header h1 i{
 .search-wrap button.search:hover{
     background-color: deepskyblue;
     color: #fff;
+}
+
+.search-wrap.close button.search{
+    display: block;
+}
+.search-wrap button.close{
+    background-color: #ddd;
+    color: lightblue;
+}
+.search-wrap button.close{
+    display: block;
+}.search-wrap.close button.close{
+    display: none;
+}
+.search-wrap.close .input-autocomplate{
+    display: none;
+}
+.search-wrap .input-autocomplate{
+    display: block;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    padding: 7px 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+}
+.search-wrap .input-autocomplate ul li{
+    list-style: none;
+    padding: 10px 5px;
+    border-bottom: 1px solid #ccc;
+    cursor: pointer;
+    font-size: 14px;
+    color: #666;
+}
+.search-wrap .input-autocomplate ul li:hover{
+    color: cornflowerblue;
+}
+.search-wrap .input-autocomplate ul li:last-child{
+    border-bottom: none;
 }
 main{
     display: flex;
@@ -123,4 +165,71 @@ main{
     top: 10px;font-size: 26px;
     line-height: 30px;
     cursor: pointer;
+}
+
+/* Weather city */
+.weather-city{
+    width: 100%;
+    background-color: #224f83;
+    padding: 20px 20px;
+    color: #fff;
+}
+.weather-city .city{
+    width: 100%;
+    border-bottom: 1px solid #355e8e;
+}
+.weather-city .city h2{
+    font-size: 40px;
+    font-weight: normal;
+    margin-bottom: 10px;
+}
+.weather-city .first-line,
+.weather-city .secound-line{
+    display: flex;
+    padding: 10px 0;
+}.weather-city .first-line{
+    margin-bottom: 10px;
+    border-bottom: 1px solid #355e8e;
+}
+.weather-city .first-line .sun{
+    margin-left: 10px;
+}
+.weather-city .first-line .sun i{
+    color: yellow;
+}
+.weather-city .secound-line .icon{
+    width: 20%;
+}
+.weather-city .secound-line .icon img{
+    width: 100%;
+}
+.weather-city .secound-line .temp{
+    width: 20%;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    font-size: 40px;
+}
+.weather-city .secound-line .details{
+    width: 50%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+.weather-city .secound-line .details .desc{
+    width: 100%;
+    font-weight: 600;
+}
+.weather-city .secound-line .details .feel,
+.weather-city .secound-line .details .wind{
+    width: 30%;
+}
+.weather-city .secound-line .details .pressure{
+    width: 30%;
+}
+.weather-city .secound-line .details .name{
+    display: block;
+    font-size: 14px;
+    text-transform: uppercase;
+    color: #ccc;
 }

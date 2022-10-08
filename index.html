@@ -1,29 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Prognoza pogody</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
     <header>
-        <div class="wrapper">
-            <h1><i class="fa fa-sun-o" aria-hidden="true"></i> Aplikacja pogodowa</i>
-            </h1>
-            <div class="search-wrap">
-                <input placeholder="Wyszukaj miejscowość..." type="text" id="city-name" autocomplete="address-level1">
-                <button class="search"><i class="fa fa-search" aria-hidden="true"></i>
-                </button>
-            </div>
+      <div class="wrapper">
+        <h1>
+          <i class="fa fa-sun-o" aria-hidden="true"></i> Aplikacja pogodowa
+        </h1>
+        <div class="search-wrap close">
+          <input
+            placeholder="Wyszukaj miejscowość..."
+            type="text"
+            id="city-name"
+            autocomplete="address-level1"
+          />
+          <button class="search">
+            <i class="fa fa-search" aria-hidden="true"></i>
+          </button>
+          <button class="close">
+            <i class="fa fa-times" aria-hidden="true"></i>
+          </button>
+          <div class="input-autocomplate">
+            <ul>
+              <li>Iława, Warmińsko-Mazurskie</li>
+              <li>Iława, Warmińsko-Mazurskie</li>
+              <li>Iława, Warmińsko-Mazurskie</li>
+              <li>Iława, Warmińsko-Mazurskie</li>
+            </ul>
+          </div>
         </div>
+      </div>
     </header>
     <main>
-        <div class="wrapper">
-
+      <div class="wrapper">
+        <div class="weather-city">
+          <div class="city">
+            <h2>Iława</h2>
+          </div>
+          <div class="first-line">
+            <div class="title">
+              <strong>Pogoda na dziś</strong> <span>08-10-2022</span>
+            </div>
+            <div class="sun">
+              <i class="fa fa-sun-o" aria-hidden="true"></i>
+              <span>06:56</span>
+              <span>18:02</span>
+            </div>
+          </div>
+          <div class="secound-line">
+            <div class="icon">
+              <img
+                src="https://developer.accuweather.com/sites/default/files/01-s.png"
+                alt="Pogoda"
+              />
+            </div>
+            <div class="temp">
+              <span>15°C</span>
+            </div>
+            <div class="details">
+              <div class="desc">Częściowo słonecznie</div>
+              <div class="feel">
+                <span class="name">Odczuwalna</span>
+                <span class="value">15°C</span>
+              </div>
+              <div class="pressure">
+                <span class="name">Ciśnienie</span>
+                <span class="value">1016 hPa</span>
+              </div>
+              <div class="wind">
+                <span class="name">Wiatr</span>
+                <span class="value">13 km/h</span>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
     </main>
     <!-- <div class="error-container">
         <div class="error">
@@ -40,9 +101,5 @@
         </div>
     </div> -->
     <script src="app.js"></script>
-    <script async
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAbIDJ0pUqi55RsJr2ZX14vr5LdVSneLvY&libraries=places&callback=activeteCitySearch">
-    </script>
-
-</body>
-</html> 
+  </body>
+</html>
