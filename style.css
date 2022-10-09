@@ -8,7 +8,6 @@
 html, body{
     height: 100%;
     font-family: 'Roboto', sans-serif;
-    height: 2000px;
 }
 .wrapper{
     min-width: 800px;
@@ -85,7 +84,7 @@ header h1 i{
 .search-wrap.close .input-autocomplate{
     display: none;
 }
-.search-wrap .input-autocomplate{
+.pac-container{
     display: block;
     position: absolute;
     top: 100%;
@@ -95,20 +94,18 @@ header h1 i{
     border-radius: 20px;
     padding: 7px 20px;
     background-color: rgba(255, 255, 255, 0.8);
+    font-family: 'Roboto', sans-serif;
 }
-.search-wrap .input-autocomplate ul li{
+.pac-container .pac-item{
     list-style: none;
-    padding: 10px 5px;
-    border-bottom: 1px solid #ccc;
     cursor: pointer;
     font-size: 14px;
-    color: #666;
 }
-.search-wrap .input-autocomplate ul li:hover{
+.pac-container .pac-item:hover{
     color: cornflowerblue;
 }
-.search-wrap .input-autocomplate ul li:last-child{
-    border-bottom: none;
+.pac-container .pac-item:first-child{
+    border-top: none;
 }
 main{
     display: flex;
@@ -174,6 +171,9 @@ main{
     padding: 20px 20px;
     color: #fff;
 }
+.weather-city.hidden{
+    display: none;
+}
 .weather-city .city{
     width: 100%;
     border-bottom: 1px solid #355e8e;
@@ -214,11 +214,13 @@ main{
     width: 50%;
     display: flex;
     flex-wrap: wrap;
-    align-items: center;
+    align-content: center;
+    text-transform: capitalize;
 }
 .weather-city .secound-line .details .desc{
     width: 100%;
     font-weight: 600;
+    margin-bottom: 15px;
 }
 .weather-city .secound-line .details .feel,
 .weather-city .secound-line .details .wind{
