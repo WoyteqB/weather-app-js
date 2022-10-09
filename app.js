@@ -174,7 +174,7 @@ let setCityDetails = (city) => {
     console.log(city);
     cityName.innerHTML = city.name;
     let dateNow = new Date(city.dt *1000);
-    cityDate.innerHTML = dateNow.getFullYear()+"-"+ (dateNow.getMonth()+1) +"-"+dateNow.getDate();
+    cityDate.innerHTML = dateNow.getDate()+"-"+ (dateNow.getMonth()+1) +"-"+dateNow.getFullYear();
     dateNow = new Date(city.sys.sunrise *1000);
     cityDayStart.innerHTML = dateNow.getHours()+":"+ (String(dateNow.getMinutes()).length>1?dateNow.getMinutes():"0"+dateNow.getMinutes());
     dateNow = new Date(city.sys.sunset *1000);
